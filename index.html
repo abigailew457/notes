@@ -9,7 +9,7 @@ how to make my own shortcuts.
 I used opt + w for wrap with abbreviation 
 and opt + r for remove tag.
 
-Emmet ending q: 
+Emmet knowledge check; 
 Why should you use Emmet?
     Emmet makes writing code much quicker and more efficient.
 What are some useful Emmet abbreviations?
@@ -23,3 +23,73 @@ What syntax expands to an element with a child element inside of it? For example
     > for example div>p
 What syntax would you use to create three elements that have the same class name?
     element.classname*number example div.class*3
+
+24/2/7 
+SVG: 
+Learning outcomes
+    What SVGs, Vector Graphics, and XML are
+    How to create simple SVGs and add them to your websites
+    When to use SVGs, and when a different image format would be more appropriate
+
+
+What is it? 
+    Scalable Vector Graphics
+    an image format that can be sized to anything wothout loosing their
+    quality and without changing their filesize. 
+    Vector Graphics are images defined by math instead of a grid of pixels.
+
+XML - Extensible Markup Language
+    1. Makes the source-code readable
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+            <rect x=0 y=0 width=100 height=50 />
+            <circle class="svg-circle" cx="50" cy="50" r="10"/>
+        </svg>
+    2. Can be put directly into HTML as is. And can be targeted with CSS. 
+
+Drawbacks 
+    Only for simple pictures as they are complicated to write out. 
+    It is more common to copy or download the code from a website 
+    or image editor that can create them (like adobe illustrator and Figma)
+
+xmlns - XML NameSpace
+        Specifies what dialect of XML you're using. This is helpful for 
+        browsers when rendering the images.
+        full breakdown: https://developer.mozilla.org/en-US/docs/Web/SVG/Namespaces_Crash_Course
+
+viewbox 
+    defines the positions of different points of the elements, 
+    defines the aspect ratio, and the origin of your SVG
+    basically changes the shape of all the pieces in the image.
+
+class, id 
+    allow css and javascript targeting
+
+elements are the basic building blocks for the images
+        including <feColorMatrix> // <circle> // <animate>
+
+Many atttributes can be changed in css
+
+Embedding SVGs
+    linked vs inline
+        linked can be linked into html like any other image 
+        it will still scale properly but the content won't  
+        be accessible from the webpage.
+
+        inlining is to paste the content of the SVG directly into the <html>
+        It will render correctly and the properties will be visible
+        to the code so they can be altered dynamically in CSS or javascript
+        Downside is it can make code harder to read and if the SVG is too large
+        it will slow down code.
+
+
+
+SVG knowledge check;
+What is the xmlns attribute?
+    It specifies the dialect of XMl which makes it so any browser can 
+    successfully render the image.
+What are some situations where you wouldn’t want to use SVG?
+    When you are working with a complicated or detailed image.
+What are the benefits of “inlining” your SVGs? What are the drawbacks?
+    Benefits: you can access the SVG aspects from the browser and that
+            allows you to change it through CSS or javascript
+    Downside: It can make code look messy and slow it down if its complicated.
