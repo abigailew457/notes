@@ -117,7 +117,7 @@ rows, columns, headers, or anything else inside.
             </tr>
         </table>
 
-24/2/8
+24/2/8-24/2/13
 Table basics
     Information is easily interpreted by making visual 
     associations between row and column headers.
@@ -147,7 +147,41 @@ Active Learning
     headers are beneficial because they make the tables
     more readable and clear. They also make it so screen 
     readers read our a whole row or column of data at once.
-    
+    colspan and rowspan allow to display table data ponts 
+    across multiple rows. 
+    <col> and <colgroup> elements allow you to define 
+    styling into onto a whole row.
+    example: 
+        <table>
+            <colgroup>
+                <col>
+                <col>
+            </colgroup>
+        </table>
+    If you want to only apply the style to the second column
+    you need an empty col otherwise the style will be added
+    to the first column. If we want to apply the same style 
+    can span it. 
+
+Captions are usful not only to allow readers to decide if the table
+is relevent to them and their needs but mostly for visually impaired readers.
+A caption allows the saves them from having to listen to the whole table and
+gives them the ability in advance to decide if its worth going through. That 
+is why the caption element is always placed right after the opening table element.
+
+When making more complex tables you can use thead, tfoot, and tbody
+these dont make tables more accessible for screen readers but they 
+are useful for styling. thead should be placed right after caption.
+Order can go; thead, tbody, tfoot or thead, tfoot, tbody. 
+
+Nesting is possible though not ideal. Sometimes necessary.
+
+To make tables more accessible to visually impaired users you can use
+scope atttributes which tell the screen readers if the headers is a 
+colheader or a rowheader. colgroup and rowgroup can be used to identify 
+headers for a group of headers. Alternatively  you can write specific 
+headers and id to all the tb or th's.
+
 
 What is a table?
     rows and columns used to make reading data easier.
@@ -156,4 +190,9 @@ Why is it a bad idea to use HTML Tables for page layout?
     makes working with the code harder, and creates extra work
     for cross platform use.
 What are caption elements useful for?
+    Allows the user to decide if the table is for them. 
+    Mostly important for visually impaired users.
 What is the scope attribute?
+    scope makes the tables more accessible for screen readers.
+    The identify whether the headers belong to a column or a row 
+    and they can identify headers for spesicif header groups.
