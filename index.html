@@ -226,3 +226,32 @@ Normalize.css
 Knowledge check;
 Why would you want to use a CSS reset?
     To provide consistency across browsers.
+
+
+CSS Units
+Absolute Units 
+    Always the same in any context. px is the only relevant absolute unit for web projects.
+    It is an absolute because the size of a px doesnt change relative to anything else on the page.
+
+relative Units
+    Can change based on their context. 
+    em and rem both refer to font size. em is the font size of an element or the parent 
+    element is setting font size. If the font size is 16px and the width is set to 4em 
+    the width would be 64px (16x4). While rem is the font size of the root (:root or HTML). 
+    rem is recommended.
+
+Viewport Units
+    vh and vw relate to the viewport size. vh being 1% the height and vw the width. 
+    Most useful when you want somthing to size to the viewport.
+
+
+
+knowledge check;
+Why would you want to use em or rem for font-size instead of px?
+    To make it more accessible. When font-size is in rem or em users can
+    change the text size to their needs.
+What are some instances where you might want to use vh and vw?
+    
+What are some instances where you might want to use px instead of a relative unit?
+    With margin to avoid unnessecary white space. Or if you aren't able to accommodate
+    text wrapping and overflow. 
