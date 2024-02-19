@@ -228,7 +228,7 @@ Why would you want to use a CSS reset?
     To provide consistency across browsers.
 
 
-CSS Units - 24/2/19
+CSS Units:
 Absolute Units 
     Always the same in any context. px is the only relevant absolute unit for web projects.
     It is an absolute because the size of a px doesnt change relative to anything else on the page.
@@ -258,3 +258,57 @@ What are some instances where you might want to use vh and vw?
 What are some instances where you might want to use px instead of a relative unit?
     With margin to avoid unnessecary white space. Or if you aren't able to accommodate
     text wrapping and overflow. 
+
+
+24/2/19
+More Text Styles:
+Fonts
+    The system font stack - When applying a font that is not installed in the users computer
+    the font will be defaulted to a fallback font. If a fallback font is not established
+    it will default to the basic HTML font which is not always the prettiest. Because of this 
+    it is common to write a font-family with a large number of font options to default to. The 
+    browser will work through till an available font is found. 
+    You can also use an online font library to use a font not installed by adding either a link 
+    to the HTML or an @import to the top of the CSS or use a downloaded font with @font-face 
+    example: 
+    @font-face {
+        font-family: my-cool-font;
+        src: url(../fonts/the-font-file.woff); 
+    }
+
+    but it is still best to provide a fallback. 
+
+Text styles
+    font-style - <em> tag is used not only for styling but to add specific emphasis on a piece 
+    of text. If you simply want to italicize for aesthetic purposes then you can use font-style: italic;
+    but if you want to add specific emphasis to a word, phrase, or sentence then <em> should be used. 
+
+    letter-spacing - add space between letters. Best used to edit the look of custom fonts and should
+    be used carefully so as not to make the page unreadable. 
+
+    line-height - adjusts the space between lines in a wrapped text for readability. 
+
+    text-transform - changes the case of a text.
+
+    text-shadow - adds a shadow around the text. Best used with headers or presentational text. 
+
+    ellipsis - with the help of some other properties text-overflow can truncate overflowing text 
+    with an ellipsis. 
+    example: 
+    .overflowing {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+Knowledge check;
+What are the 2 ways to add fonts that are not installed on a users computer?
+    You can <link> them into the HTML or @import them into the top of the CSS. 
+    Or you can add you own downloaded font with @font-face. 
+What is the (system font stack) and why would you want to use it?
+    The system font stack is when you apply multiple fonts into your font style in order to ensure
+    you have fallback if the selected font is not installed in the users computer. 
+Which property would you use to increase or decrease the space between letters in a word?
+    letter-spacing
+Which property would you use to increase or decrease the space between lines in a paragraph?
+    line-height
