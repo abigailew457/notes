@@ -228,7 +228,7 @@ Why would you want to use a CSS reset?
     To provide consistency across browsers.
 
 
-CSS Units
+CSS Units - 24/2/19
 Absolute Units 
     Always the same in any context. px is the only relevant absolute unit for web projects.
     It is an absolute because the size of a px doesnt change relative to anything else on the page.
@@ -251,7 +251,10 @@ Why would you want to use em or rem for font-size instead of px?
     To make it more accessible. When font-size is in rem or em users can
     change the text size to their needs.
 What are some instances where you might want to use vh and vw?
-    
+    With calc() it can be useful to make the text adjust size to the viewport.
+    calc() provides a base size so that the text size doesnt shrink too fast or
+    too small. 
+    When using full-height layouts and sticky footers.
 What are some instances where you might want to use px instead of a relative unit?
     With margin to avoid unnessecary white space. Or if you aren't able to accommodate
     text wrapping and overflow. 
