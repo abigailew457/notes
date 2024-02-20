@@ -364,3 +364,72 @@ Which property would you use to create rounded corners on an element?
     border-radius
 How would you use border-radius to make a circular element?
     border-radius: 50%;
+
+
+Advanced Selectors
+Child and sibling combinators
+    > - the child combinator. main div will select all child and grandchild divs inside main
+    while main > div will only select the child divs and main > div > div will only select 
+    the grandchild divs. > is used to select an element that is one level down from the main element. 
+    + - the adjacent sibling combinator. Will select an element adjacent to our target. .group1 + div 
+    will select group2 div and .group1 + div + div will select group3.
+    ~ - the general sibling combinator. Selects all the siblings following an element and not 
+    just the first one. .group1 ~ div selects group2 and group3.
+
+Pseudo-selectors
+    pseudo-classes and pseudo-elements. pseudo-class selectors are prefixed with a single colon and 
+    are a different way to target elements that already exist. pseudo-element selectors are prefixed 
+    with two colons and and are used to target elements that dont normally exist in the markup.
+
+    pseudo-classes
+        dynamic and user action pseudo-classes make your page feel more dynamic and interactive.
+        they include :focus, :hover, :active, and :visited. Example: :link color set to blue but
+        :visited sets it to color purple after clicking. 
+        Structural pseudo-classes let you select an element based on where it is in the DOM. 
+        This includes :root, :first-child, :empty, and :only-child. :root refers to the very top
+        level of the document. :nth-child allows you to be more flexable. Example: .myList:nth-child(5)
+        selects the 5th element with class myList, .myList:nth-child(3n) selects every third element with 
+        class myList, and .myList:nth-child(even) selects every even element with class myList.
+
+    Pseudo-elements
+        Allow you to affect parts of HTML that arent elements at all. This includes ::marker, ::first-letter,
+        ::selection, and ::before. 
+
+    Attribute selectors
+        [attribute] - This general selector will select anything where the given attribute exists. 
+        Its value doesnt matter. Example: [src] this will target any element that has a src attribute.
+        selector[attribute] - Optionally we can combine our attribute selectors with other types of 
+        selectors, such as class or element selectors. Example: img[src] this will only target img 
+        elements that have a src attribute.
+        [attribute="value"] - To get really specific, we can use = to match a specific attribute with 
+        a specific value. Example: img[src="puppy.jpg"] this will target img elements with a src attribute 
+        that is exactly "puppy.jpg"
+        If you need to be more general, example img elements where the src attribute ends in a specific 
+        value we can use [attribute^="value"] - ^= which will match strings from the start, [attribute$="value"] - $= 
+        which will match strings from the end, or [attribute*="value"] - *= the wildcard selector will match 
+        anywhere inside the string.
+
+Completed CSS Diner
+
+What is the difference between the child combinator and the descendant combinator?
+    decendent combinator selects all child and grandchild divs in a parent while child combinator
+    selects only all children or all grandchild divs not both.
+How does the syntax of pseudo-classes and pseudo-elements differ?
+    pseudo-class uses only single colon : 
+    pseudo-element uses double colon ::
+Do pseudo-classes exist somewhere in HTML? Do pseudo-elements?
+    pseudo-classes exist somewhere in HTML while pseudo-elements do not. 
+Name two ways you could select every second child of an element, starting with the first.
+    :nth-of-type(2n+1) 
+    :nth-of-type(odd)
+What is the difference between div:first-child and div:last-child? What will each select?
+    The difference is what child within the parent element each selects when there are multiple child elements.
+    The first-child selects the first div within the parent while the last-child will select the last.
+What selector would you use to style a button a user is currently hovering over? 
+    :hover
+How about one that is currently being clicked on?
+    :active
+How could you select all input elements with a type of text?
+    input[type="text"]
+How could you select all classes that begin with thunder?
+    [class^="thunder"]
