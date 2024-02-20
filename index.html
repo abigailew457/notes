@@ -312,3 +312,55 @@ Which property would you use to increase or decrease the space between letters i
     letter-spacing
 Which property would you use to increase or decrease the space between lines in a paragraph?
     line-height
+
+
+24/2/20
+More CSS Properties: 
+Background 
+    background property is shorthand for 8 different background-related properties. 
+    It is possible to use these properties individually and sometimes it is better to. 
+    These properties are attachment, clip, color, image, origin, position, repeat, and size. 
+    If something is not set in the background property it is set to the default. 
+    Background properties do not provide any information to screen readers. If the background contains
+    anything critical to understand the page overall then that information should be described 
+    semantically in the document. 
+
+Borders
+    Also a shorthand but much less complicated. You just need to define a size, style, and color.
+    The border property sets width, style, and color. The order does not matter. The border property
+    is used when trying to target all sides of a border. If you want differences in sides then you have 
+    to target each property individually, border-width/-style/-color, which lets you target each side
+    individually.
+    Border-radius is the property that applies a rounded corner on things. The radius applies to the whole
+    background even if the element has no border. It is specified as 1-4 length or percentage values.
+
+Box-shadow
+    Adds a shadow effect around an element. It is described by X and Y offsets relative to the element,
+    blur and spread radius, and color. Preset border-radius is set to any box-shadow. 
+
+Overflow
+    Allows you to define what happens to an element when its content is too big to fit. These values are
+    visible, hidden, clip, scroll, auto, and hidden visible. A scrolling content area cannot be scrolled 
+    by a keyboard-only user so you need to give it a tabindex using tabindex="0". But when screen readers
+    encounter tabindex the read the entire content so you need to ass an appropriate WAI-ARIA roll 
+    like roll='region'. 
+
+Opacity 
+    The degree to which the content behind an element is hidden. It applies to the element as a whole.
+
+
+Knowledge check;
+Which property would you use to make an element transparent?
+    opacity 
+Which property would you use to make a background image tile?
+    background-image
+Which property would you use to add scrollbars to an element?
+    overflow auto or overflow scroll. The difference is that scroll will set to both directions 
+    regardless of whether there is overflow while auto will only set to the direction that has
+    overflow.
+Which property would you use to add a shadow behind an element?
+    box-shadow
+Which property would you use to create rounded corners on an element?
+    border-radius
+How would you use border-radius to make a circular element?
+    border-radius: 50%;
