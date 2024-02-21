@@ -517,4 +517,40 @@ How do we use CSS math functions in our CSS?
     size around the header and footer we can use calc() to do the math for us. 
 How can CSS functions help make websites and applications more responsive?
     clamp() allows us to set multiple values to an element providing a min, ideal, and max.
+
+
+Custom Properties
+    custom properties allow you to reference a CSS value however many times we want throughout a file
+    First you declare our custom property with a double hyphen followed by a case-sensitive, 
+    hyphen-separated property name, --hyphen-separated-name also known as a Kebab, and then you can 
+    store any valid CSS value in our newly declared custom property. When you want to use the custom
+    property you use the var() function as the value of a CSS property and then place the custom 
+    property inside of the parenthesis.
+    As a fallback the var() function accepts two parameters in case the custom property is either
+    invalid or undeclaired. This fallback feature can also be nested with another custom property. 
+
+    Scope of a custom property is determined by the selector and includes the selector the custom 
+    property was declared for as well as any descendants of that selector. If you want to be able
+    to use a custom property on a bunch of selectors then you can declair the custom property on
+    the :root selector. 
+
+    Using the :root selector also allows you to create themes with custom properties. For example when 
+    setting a light and dark theme we can do this by adding custom properties into :root.light
+    and :root.dark then the other values will use whichever custom properties apply based on the 
+    class that is currently present in the root element.
     
+
+Knowledge check;
+How would you declare a custom property with a name of text-color?
+    First you have to put it in a selector like :root then write it with a double hyphen start
+    example: :root{ --text-color: red; }
+How would you access a custom property with a name of background-color?
+    After creating a custom property you can access it in any property with the var() element
+    example: 
+        .body{ 
+            --background-color: red; 
+            background-color: var(--background-color)}
+Where would you declare a custom property to have its scope be global and accessible by all other selectors?
+    :root
+Where would you declare a custom property so that a users theme setting from their OS or browser was taken into account?
+    In a prefers-color-scheme media query. @media (prefers-color-scheme: dark) 
