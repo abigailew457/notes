@@ -466,3 +466,55 @@ What is the difference between fixed and sticky positioning?
     place on the screen and the element will stay there even while scrolling. 
     Sticky positioning begins in the default position and will function as static until 
     scolled past the default and then the element will switch to a fixed position.
+
+
+CSS Functions
+    Functions are reusable pieces of code which perform specific tasks. 
+    examples include: 
+        color: rgb(0, 42, 255);
+        background: linear-gradient(90deg, blue, red);
+    the value color is the function rgb(). Functions can not be created in CSS
+    it comes with a bundle of premade functions like calc(), min(), max(), and clamp().
+
+    calc() handles complex math and allows you to mix units like vh, rem, and px
+    example: 
+        :root {
+            --header: 3rem;
+            --footer: 40px;
+            --main: calc(100vh - calc(var(--header) + var(--footer)));
+            }
+    calc() does the math 100vh - (header + footer) or 100vh - (3rem + 40px) 
+    mixing units and applying the results to main. 
+
+    min() acts as a boundary for the maximum allowed value. In the example 
+    width: min(150px, 100%) when there are 150px or more available then it will 
+    take up only 150px but if there are less then 150px it will take up 100% of 
+    the parents width. You can also do basic math inside a min() 
+    example: width: min(80ch, 100vw - 2rem);
+
+    max() works the same as min() but in reverse. It will take the largest 
+    value in the parentheses for example width: max(100px, 4em, 50%) as long 
+    as 4em and 50% are larger then 100px max() will select the larger of the two.
+    If however they are smaller then it will default to 100px. 
+
+    clamp() makes elements fluid and responsive. It takes three values the smallest,
+    the ideal, and the largest values. In the example font-size: clamp(320px, 80vw, 60rem)
+    320px would be the smallest acceptable font-size, 60rem would be the largest,
+    and 80vw would be the ideal.  
+
+
+Knowledge check;
+What are the four CSS math functions we covered above?
+    calc() deals with complex math. Can work with mixed units.
+    min() sets a min size acceptable. Works as a boundery for max().
+    max() sets a max size acceptable. Works as a boundery for min().
+    clamp() allows you to make elements fluid and responsive. When used with font-size
+    for exaple it can set a smallest, ideal, and largest size preference. 
+How do we use CSS math functions in our CSS?
+    We can use math functions to write property values to be written as complex mathematical 
+    expressions. Like with calc() which allows us to take multiple units and perform specified 
+    math to these units. For example if we establish a header and footer size and want the body to
+    size around the header and footer we can use calc() to do the math for us. 
+How can CSS functions help make websites and applications more responsive?
+    clamp() allows us to set multiple values to an element providing a min, ideal, and max.
+    
