@@ -635,6 +635,141 @@ Form basics
         and buttons. 
         The imput element is the most versatile of all the form controls. 
 
+        The input element is the most versatile. It accepts a type attribute which tells the 
+        browser what type of data it should expect and how it should render the input element.
+        You can use a text input to collect things like users names. 
+        text example:
+        <form action="example.com/path" method="post">
+            <input type="text">
+        </form>
+        Labels make it clear to the users what kind of data they are expected to provide. 
+        When using a label element the display text should go between the opening and closing tags.
+        example: 
+        <form action="example.com/path" method="post">
+            <label for="first_name">First Name:</label>
+            <input type="text" id="first_name">
+        </form>
+        The label element accepts a for attribute to connect with an inputs id. 
+
+        A Placeholder attribute provides an example for the users to understand what type of data
+        is expected of them. This should be placed diectly in the input. 
+        example: 
+        <label for="first_name">First Name:</label>
+        <input type="text" id="first_name" placeholder="Bob...">
+
+        The Name attribute functions as a referance for the data imputted after submition. 
+        example: 
+        "form": {
+            "age": "33",
+            "first_name": "John",
+            "last_name": "Doe"
+          },
+        Without it the form input will be ignored.
+
+        You can also use form controls outside of the element by calling the input id.
+
+        Email inputs display a different keyboard which includes the @ symbol on mobile devices and
+        can be called on with input type="email"
+        Password inputs mask inputted data with another character like an asterisk to prevent others
+        from seeing whats been entered and can be called on with input type="password"
+        Number inputs only accept number values and ignore all other characters. They can be called on
+        with input type="number"
+        Data inputs renders a data picker calander and can be called on with input type="date"
+
+        Text area elements provide an input box that can accept text that spans multiple lines like 
+        user comments and reviews and it can be resized. We create a text area with <textarea></textarea>
+        You can also add rows or cols attributes to the text area which will control the initial
+        height (rows) and width (cols) of the text area. 
+        example: <textarea rows="20" cols="60"></textarea>
+
+    Selection elements
+        allows you to select a value from a predesigned list. 
+
+        Select dropdown renders a list where users can select and option. To create a select dropdown
+        you need to use a select element and any options should be placed in an options element.
+        example: 
+        <select name="Car">
+            <option value="mercedes">Mercedes</option>
+            <option value="tesla">Tesla</option>
+            <option value="volvo">Volvo</option>
+            <option value="bmw">BMW</option>
+            <option value="mini">Mini</option>
+            <option value="ford">Ford</option>
+        </select>
+        All option elements should have a value attribute that will be sent to the server when chosen.
+        If you want to make an option element the default selection you need to add the selected 
+        attribute. example: <option value="volvo" selected>Volvo</option>
+        The optgroup element divides the options into groups. It takes a label attribute which the 
+        browser uses as the label for each group. 
+        example: 
+        <select name="fashion">
+            <optgroup label="Clothing">
+              <option value="t_shirt">T-Shirts</option>
+              <option value="sweater">Sweaters</option>
+              <option value="coats">Coats</option>
+            </optgroup>
+            <optgroup label="Foot Wear">
+              <option value="sneakers">Sneakers</option>
+              <option value="boots">Boots</option>
+              <option value="sandals">Sandals</option>
+            </optgroup>
+        </select>
+
+        Radio buttons
+            When giving 5 or less options it is often better to use radio buttons. Radio buttons 
+            show all the choices on the screen and allows the user to choose one of these options.
+            You can create this by using a type attribute of radio. The radio button will automatically
+            deselect the first option when another is chosen because the all have the same name attribute. 
+            If you want to set a default selection you can add the checked attribute to it. 
+            example: 
+            <h1>Ticket Type</h1>
+            <div>
+              <input type="radio" id="child" name="ticket_type" value="child">
+              <label for="child">Child</label>
+            </div>
+            
+            <div>
+              <input type="radio" id="adult" name="ticket_type" value="adult" checked>
+              <label for="adult">Adult</label>
+            </div>
+            
+            <div>
+              <input type="radio" id="senior" name="ticket_type" value="senior">
+              <label for="senior">Senior</label>
+            </div>
+
+        Checkboxes are like radio buttons but they allow users to choose multiple options at once.
+        They use the type attribute if checkbox annd they also use the checked attribute to mark 
+        a default. 
+        example: 
+        <h1>Pizza Toppings</h1>
+
+        <div>
+          <input type="checkbox" id="sausage" name="topping" value="sausage">
+          <label for="sausage">Sausage</label>
+        </div>
+        
+        <div>
+          <input type="checkbox" id="onions" name="topping" value="onions">
+          <label for="onions">Onions</label>
+        </div>
+        
+        <div>
+          <input type="checkbox" id="pepperoni" name="topping" value="pepperoni" checked>
+          <label for="pepperoni">Pepperoni</label>
+        </div>
+        
+        <div>
+          <input type="checkbox" id="mushrooms" name="topping" value="mushrooms">
+          <label for="mushrooms">Mushrooms</label>
+        </div>
+        You can also use a single checkbox to toggle between a true or false statement. 
+        example: 
+        <div>
+          <input type="checkbox" id="newsletter" name="news_letter">
+          <label for="newsletter">Send me the news letter</label>
+        </div>
+
 
 Knowledge check;
 Explain what the form element is for and what two attributes it should always include.
