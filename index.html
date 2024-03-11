@@ -770,6 +770,50 @@ Form basics
           <label for="newsletter">Send me the news letter</label>
         </div>
 
+    The Button element creates a clickable button that the users can interact with. The text or 
+    context is placed within the opening and closing tags. Buttons can also accept 3 type attributes 
+    submit, reset, and generic. 
+    Submit, once clicked, will take all the information a user has provided in a form and submit it. 
+    Reset clears all the data a user has entered into the form and sets the form back to default.
+    Generic can be used for anything and is commonly used with JS to create interactive UI. 
+    All can be used by adding a type='' into the btn element. 
+    example: 
+        <button type="submit">Submit</button>
+        <button type="reset">Reset</button>
+        <button type="button">Click to Toggle</button>
+    
+    Firms can become overwhelming with alot of information but HTML provides elements to make 
+    large forms more orginized and less overwhelming. 
+    Fieldset element lets you group related inputs into one unit. While legend elements provide a 
+    heading for the fieldset groups and should always be placed right after the fieldset tags.
+    example:
+    <fieldset>
+        <legend>Contact Details</legend>
+      
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name">
+      
+        <label for="phone_number">Phone Number:</label>
+        <input type="tel" id="phone_number" name="phone_number">
+      
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email">
+      </fieldset>
+      
+      <fieldset>
+        <legend>Delivery Details</legend>
+      
+        <label for="street_address">Street Address:</label>
+        <input type="text" id="street_address" name="street_address">
+      
+        <label for="city">City:</label>
+        <input type="text" id="city" name="city">
+      
+        <label for="zip_code">Zip Code:</label>
+        <input type="text" id="zip_code" name="zip_code">
+    </fieldset>
+      
+    
 
 Knowledge check;
 Explain what the form element is for and what two attributes it should always include.
